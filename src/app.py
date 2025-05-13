@@ -38,6 +38,42 @@ activities = {
         "schedule": "Mondays, Wednesdays, Fridays, 2:00 PM - 3:00 PM",
         "max_participants": 30,
         "participants": ["john@mergington.edu", "olivia@mergington.edu"]
+    },
+    "Basketball Team": {
+        "description": "Join the basketball team and compete in inter-school tournaments",
+        "schedule": "Tuesdays and Thursdays, 4:00 PM - 6:00 PM",
+        "max_participants": 15,
+        "participants": []
+    },
+    "Soccer Club": {
+        "description": "Practice soccer skills and participate in friendly matches",
+        "schedule": "Wednesdays and Fridays, 3:30 PM - 5:30 PM",
+        "max_participants": 20,
+        "participants": []
+    },
+    "Art Workshop": {
+        "description": "Explore your creativity through painting and drawing",
+        "schedule": "Mondays, 3:00 PM - 4:30 PM",
+        "max_participants": 10,
+        "participants": []
+    },
+    "Drama Club": {
+        "description": "Learn acting skills and participate in school plays",
+        "schedule": "Thursdays, 3:30 PM - 5:00 PM",
+        "max_participants": 15,
+        "participants": []
+    },
+    "Math Olympiad Training": {
+        "description": "Prepare for math competitions with advanced problem-solving techniques",
+        "schedule": "Tuesdays, 4:00 PM - 5:30 PM",
+        "max_participants": 25,
+        "participants": []
+    },
+    "Debate Club": {
+        "description": "Develop public speaking and critical thinking skills through debates",
+        "schedule": "Fridays, 3:30 PM - 5:00 PM",
+        "max_participants": 20,
+        "participants": []
     }
 }
 
@@ -51,7 +87,7 @@ def root():
 def get_activities():
     return activities
 
-
+# Validate student is not already signed up for the activity
 @app.post("/activities/{activity_name}/signup")
 def signup_for_activity(activity_name: str, email: str):
     """Sign up a student for an activity"""
